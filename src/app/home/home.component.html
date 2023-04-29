@@ -1,0 +1,625 @@
+<!-- header section -->
+<div class="container-fluid">
+  <section class="content" id="navbar">
+    <div class="header">
+      <div class="logo">
+        <span>PostMaker</span>
+      </div>
+      <div class="menu">
+        <ul>
+          <li [ngClass]="{'hederMenuActive' : i === headerMenuActive }" *ngFor="let item of menuData; let i =index"
+            (click)="activeHeaderMenu(i)"><a style="padding: 10px 20px;padding: 10px 20px;
+                      text-decoration: none;
+                      color: #0a1e76;" href="{{item.link}}">{{item.name}}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row main-banner-text">
+        <div class="col-md-6">
+          <div class="main-title">
+            <span>Free Customizable<br />
+              <b>Festival templates</b> for every occasion.</span>
+          </div>
+          <div class="desc">
+            <p>Spreading your event with a well-executed PostMaker is easy to grab people's attention. Fotor's PostMaker generator helps you to make a PostMaker online and boost your store traffic quickly.</p>
+          </div>
+          <button class="main-banner-button">
+            Explore Now
+          </button>
+
+          <div class="total-customer">
+            <div class="total-section1">
+              <span>32K</span>
+              <p>Active User</p>
+            </div>
+            <div class="total-section1">
+              <span>108K</span>
+              <p>Total Download</p>
+            </div>
+            <div class="total-section1">
+              <span>18K</span>
+              <p>Smart Work</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <ngb-carousel #carousel [interval]="500" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+              (slide)="onSlide($event)">
+              <ng-template ngbSlide *ngFor="let img of [1,2,3,4,5,6,7,8,9,10] , let i = index">
+                <div class="picsum-img-wrapper">
+                  <img class="card-body_img" (click)="image($event)"
+                    src="{{s3bucket}}assets/FestivalPosters/{{folder}}/{{i+1}}.jpg" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop" />
+                </div>
+                <div class="card-body_text">
+                  {{folder}} PostMaker
+                </div>
+              </ng-template>
+            </ngb-carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- About Section  -->
+<Section id="About" style="height: 910px; padding-top: 5%;">
+  <div class="container">
+    <div class="About-text-content">
+      <div class="row">
+        <div class="col-6">
+            <div class="about_text_item">
+              <span>Watch This About</span>
+              <h4 class="about_item">
+                One festival, many templates
+              </h4>
+              <p>
+                Welcome to PostMaker Maker, your go-to destination for creating stunning and personalized PostMakers! We are a 
+                premier online platform that empowers you to design unique and eye-catching posters to promote your upcoming festival 
+                or event in just a few clicks.
+              </p>
+              <p>
+                Our website is designed to be user-friendly and intuitive, making it easy for anyone to create beautiful posters without 
+                any design experience. With our diverse range of templates, graphics, and fonts, you can customize your posters to suit 
+                any event, from music festivals to charity fundraisers.
+              </p>
+              <div class="about-button">
+                <button data-bs-toggle="modal" data-bs-target="#AboutModal">
+                  More About
+                </button>
+              </div>
+            </div>
+        </div>
+        <div class="col-6">
+          <div class="about_card">
+              <img src="{{s3bucket}}assets/Blank 7 Grids Collage.png" style="width: 100%; box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;" alt="">
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>
+
+<!-- Modal About -->
+<div class="modal fade" id="AboutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modalabout_blog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">About us</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal_text">
+          <p>
+            Welcome to PostMaker Maker, your go-to destination for creating stunning and personalized festival 
+            posters! We are a premier online platform that empowers you to design unique and eye-catching posters 
+            to promote your upcoming festival or event in just a few clicks.
+          </p>
+          <p>
+            Our Story:
+            At PostMaker Maker, we are passionate about festivals and events. We understand the importance of creating visually 
+            appealing posters that capture the essence of your event and attract a larger audience. That's why we created this 
+            platform to make poster designing easy, quick, and fun for festival organizers, event planners, and enthusiasts alike.
+          </p>
+          <p>
+            Our Vision:
+            Our vision is to provide festival organizers with a user-friendly and creative tool to design posters that reflect the
+            spirit of their event. We believe that every festival deserves a standout poster that captures the excitement and 
+            vibrancy of the occasion. We aim to empower our users with a wide range of design options and customization features 
+            to create posters that leave a lasting impression on their audience.
+          </p>
+          <p>
+            Why Choose PostMaker Maker:
+          </p>
+          <p>
+            Easy-to-Use: Our platform is designed to be user-friendly, even for those with no prior design experience. With our 
+            intuitive interface and drag-and-drop features, you can create a PostMaker in minutes.
+          </p>
+          <p>
+            Customization Options: We offer a wide range of design templates, fonts, colors, and graphics that you can customize 
+            to suit your festival's theme and branding. You can also upload your own images and logos to add a personal touch to 
+            your poster.
+          </p>
+          <p>
+            Professional-Quality Results: Our platform provides high-resolution poster designs that are print-ready, ensuring that 
+            your posters look professional and visually appealing, whether you're promoting your festival online or in print.
+          </p>
+          <p>
+            Time-Saving: Say goodbye to the hassle of hiring a graphic designer or spending hours designing a poster from scratch. 
+            With PostMaker Maker, you can create a stunning poster in no time, allowing you to focus on other aspects of 
+            your festival planning.
+          </p>
+          <p>
+            Affordable: We offer cost-effective pricing plans that fit the budget of festival organizers of all sizes. Our platform 
+            provides excellent value for money, giving you access to premium design tools without breaking the bank.
+          </p>
+          <p>
+            Design Your PostMaker Today!
+            Join us at PostMaker Maker and experience the joy of designing your own PostMakers. Whether you're organizing 
+            a music festival, food festival, cultural event, or any other type of festival, our platform has everything you need to 
+            create a captivating poster that grabs attention and generates excitement. Get started now and let your festival shine 
+            with a poster that truly represents your event's spirit!
+          </p>
+          <p>
+            Our website is designed to be user-friendly and intuitive, making it easy for anyone to create beautiful posters without 
+            any design experience. With our diverse range of templates, graphics, and fonts, you can customize your posters to 
+            suit any event, from music festivals to charity fundraisers.  
+          </p>
+          <p>We understand the importance of standing out in today's crowded marketplace, which is why we've made it our mission 
+            to help you create posters that are unique and eye-catching. Whether you're looking to promote a small local event 
+            or a major international festival, we have the tools and resources you need to create a poster that truly captures 
+            the spirit of your event.
+          </p>
+          <p>
+            At our PostMaker maker website, we believe that design should be accessible to everyone, regardless of their 
+            experience or budget. That's why we offer a range of pricing plans to suit your needs, from basic free plans to 
+            premium plans that offer additional features and customization options.
+          </p>
+          <p>
+            We're committed to helping you succeed, which is why we offer 24/7 support and resources to help you make the 
+            most of our website. So why wait? Sign up today and start creating beautiful posters that will help your event 
+            stand out and succeed!
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FestivalPosters section -->
+<section id="FestivalPosters" style="height: 1000px;">
+  <div class="menubar-main-content">
+    <div class="container">
+      <div class="menubar-text-content">
+        <span>Our Category</span>
+        <h3>Ready To Use PostMakers</h3>
+      </div>
+      <div class="row" style="width: 100%; padding: 5% 0;">
+        <div class="col-3">
+          <div class="menubar">
+            <ul *ngFor="let item of sortedFestivals; let i=index" [ngClass]="{'activeTab' : i === activeMenuIndex }">
+              <div class="menubar-content">
+                <span [ngClass]="{'activeIcon' : i === activeMenuIndex }"></span>
+                <li [ngClass]="{'menu-active' : i === activeMenuIndex }" (click)="festivalPosters(item.folderName , i)">
+                  {{item.name}} <label>{{item.date | date: 'dd-MM-yyyy'}}</label></li>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="festivalPosters">
+            <div class="cards">
+              <div style="width: 15rem;" *ngFor="let img of [1,2,3,4,5,6,7,8,9,10] , let i = index">
+                <img class="card-img-top card_img" (click)="image($event)"
+                  src="{{s3bucket}}assets/FestivalPosters/{{folder}}/{{i+1}}.jpg" alt="Card image cap" data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- video section -->
+<section id="howtouse"  style="height: 900px;">
+  <div class="video-bgImage">
+    <div class="container-fluid video-bg">
+      <div class="video-text-content">
+        <span>Watch This Video</span>
+        <h3>How To Make Festival Post Video</h3>
+      </div>
+    </div>
+    <div class="container autoplay-video">
+      <section class="video">
+        <video class="intro-video" controls autoplay loop muted>
+          <source src="{{s3bucket}}assets/Video/Intro Video.mp4" type="video/mp4">
+        </video>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial section -->
+<Section id="Testimonial" style="height: 620px;">
+  <div class="video-bgImage">
+    <div class="container-fluid">
+      <div class="video-text-content">
+        <span>Watch This Testimonial</span>
+        <h3>What Clients Say</h3>
+      </div>
+      <div class="testimonial_card container-fluid">
+        <ngb-carousel #carousel [interval]="2500" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+          (slide)="onSlide($event)">
+          <ng-template ngbSlide>
+            <div class="container client-say">
+               <span>
+                I had people asking me how do I create such cool designs. With FestivalPoster I don’t have to worry about stitching up images or graphics. I can easily choose my templates, colors, and themes.
+               </span>
+                <div class="testi-image">
+                  <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80" alt="user" />
+                </div>
+                <div class="testi-footer">
+                  <span>Mark Jordan</span>
+                  <h4>www.example.com</h4>
+                </div>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>    
+            <div class="container client-say">
+               <span>
+                I chose FestivalPoster because it was easy to use, customize, and adjust, while giving me the results I wanted fairly quickly. I have to compliment you on such a great tool you’ve built.
+               </span>
+                <div class="testi-image">
+                  <img src="{{s3bucket}}assets/f/istockphoto-1153206642-612x612.jpg" alt="user" />
+                </div>
+                <div class="testi-footer">
+                  <span>Jos Buttler</span>
+                  <h4>www.example.com</h4>
+                </div>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+  </div>
+</Section>
+
+<!-- Modal DesignId -->
+<div class="modal fade" id="DesignId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="vertical-alignment-helper">
+      <div class="modal-dialog vertical-align-center">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Design a custom blog header in minutes</h4>
+              </div>
+              <div class="modal-body">Use our readymade templates to create click-worthy banners for free. Use our blog banner maker to create headers that get maximum attention. And, here’s the best part: You can use our ready-made templates to create a blog banner in minutes.</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal BlogBanners -->
+<div class="modal fade" id="BlogBanners" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="vertical-alignment-helper">
+      <div class="modal-dialog vertical-align-center">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Blog banners for all your needs</h4>
+              </div>
+              <div class="modal-body">Whether you run a business blog or a sports blog on the side - you can use FestivalPosters
+                free blog banner maker for everything And, here’s the best part: You can use our ready-made templates to create a blog banner in minutes.</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal AddpPhotos -->
+<div class="modal fade" id="AddpPhotos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="vertical-alignment-helper">
+      <div class="modal-dialog vertical-align-center">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Add photos and crazy design elements</h4>
+              </div>
+              <div class="modal-body">Our blog banner maker gives you access to thousands of stock images and design objects for free. Choose the elements that fit the topic of your blog and the tone of your brand.</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal DesignBlog -->
+<div class="modal fade" id="DesignBlog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="vertical-alignment-helper">
+      <div class="modal-dialog vertical-align-center">
+          <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Design Blog banners without any design skills</h4>
+              </div>
+              <div class="modal-body">Design skills? Nah! You don’t need design skills to make awesome blog headers on
+                FestivalPoster Choose a design that inspires you the most and set it up on your blog in minutes. If you want to let your creative juices flow, be our guest and start with a custom design.</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Blog Section -->
+<Section id="Blog" style="height: 750px;">
+  <div class="video-bgImage">
+    <div class="container-fluid">
+      <div class="video-text-content">
+        <span>Blog</span>
+        <h3>Our Latest Blog</h3>
+      </div>
+
+      <ngb-carousel #carousel [interval]="2500" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+        (slide)="onSlide($event)">
+        <ng-template ngbSlide>
+          <div class="container mt-5">
+            <div class="row" style="padding: 3% 0;">
+              <div class="col-md-4">
+                <div class="latest-blog">
+                  <div class="blog1">
+                    <img src="{{s3bucket}}assets/How-to-make-happy-new-year-card.webp"/>
+                  </div>
+                  <div class="text">
+                    <h3>Design a custom blog header in minutes</h3>
+                    <span>Use our readymade templates to create click-worthy banners for free...</span>
+                  </div>
+                  <div class="about-button">
+                    <button data-bs-toggle="modal" data-bs-target="#DesignId">
+                      More About
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="latest-blog">
+                  <div class="blog1">
+                    <img src="{{s3bucket}}assets/62a1ff71f520bb785087f5b4_top-marketing-blogs1_19f178343592408234a94f70c4bb9ad2_2000.jpg" />
+                  </div>
+                  <div class="text">
+                    <h3>Blog banners for all your needs</h3>
+                    <span>Whether you run a business blog or a sports blog on the side - you can use FestivalPosters
+                      free blog banner maker for everything...</span>
+                  </div>
+                  <div class="about-button">
+                    <button data-bs-toggle="modal" data-bs-target="#BlogBanners">
+                      More About
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="latest-blog">
+                  <div class="blog1">
+                    <img src="{{s3bucket}}assets/Email_Banner_Size_Cover_Image.png" />
+                  </div>
+                  <div class="text">
+                    <h3>Add photos and crazy design elements</h3>
+                    <span>Our blog banner maker gives you access to thousands of stock images and design...</span>
+                  </div>
+                  <div class="about-button">
+                    <button data-bs-toggle="modal" data-bs-target="#AddpPhotos">
+                      More About
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="container mt-5">
+            <div class="row" style="padding: 3% 0;">
+              <div class="col-md-4">
+                <div class="latest-blog">
+                  <div class="blog1">
+                    <img src="{{s3bucket}}assets/6461.webp" />
+                  </div>
+                  <div class="text">
+                    <h3>Design Blog banners without any design skills</h3>
+                    <span>Design skills? Nah! You don’t need design skills to make awesome blog</span>
+                  </div>
+                  <div class="about-button">
+                    <button data-bs-toggle="modal" data-bs-target="#DesignBlog">
+                      More About
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</Section>
+
+<!-- Footer section -->
+<section id="footer">
+  <div class="footer">
+    <section id="footer">
+      <div class="main-footer container">
+        <div class="logoinfo" data-aos="fade-up">
+          <div class="Nav_navName">
+            <a>PostMaker</a>
+          </div>
+          <p>By realloc infotech</p>
+
+          <div class="contact-details">
+            <h1>Contact Us</h1>
+            <li>
+              <div class="fa fa-envelope"></div><a class="hover" target="_blank">info@reallocinfotech.com</a>
+            </li>
+          </div>
+        </div>
+        <div class="com" data-aos="fade-up">
+          <h1>About</h1>
+          <ul>
+            <li><a class="hover" style="text-decoration: underline;" href="#home">Home</a></li>
+            <li><a class="hover" style="text-decoration: underline;" href="#FestivalPosters">FestivalPosters</a></li>
+            <li><a class="hover" style="text-decoration: underline;" href="#howtouse">How To Use</a></li>
+            <li><a class="hover" style="text-decoration: underline;" href="#Testimonial">Testimonial</a></li>
+            <li><a class="hover" style="text-decoration: underline;" href="#Blog">Blog</a></li>
+            <li><a class="hover" style="text-decoration: underline;" href="#About">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <footer>©2023 Festival Banner All Right Reserved.</footer>
+    </section>
+  </div>
+</section>
+
+<!-- FestivalPosters Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modalfestival">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 50px;padding: 10px 16px 0px 16px;align-items: baseline;">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Festival Banner</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-7">
+            <div id="mainContainer">
+              <div class="example-boundary" style="width: 100.2%;">
+                <div [ngStyle]="{'background-color' : borderColor}" style="padding: 20px;">
+                  <img class="card-img-top"
+                    style="height: 660px; overflow: hidden;border-radius: 15px;box-shadow: rgb(0 0 0 / 40%) 0px 7px 29px 0px;"
+                    src="{{imgUrl}}" alt="Card image cap">
+                </div>
+                <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+                  <img [ngStyle]="{'height.px' : height , 'width.px' : width}" [src]="imageUrl">
+                </div>
+                <div class="card-content" cdkDragBoundary=".example-boundary" cdkDrag *ngIf="frames1">
+                  <div class="text-block-footer" [ngStyle]="{'background-color' : cardBackground}">
+                    <div class="row" style="padding: 2px">
+                      <div class="col-12" style="border-bottom: 1px solid #e0e0e0;">
+                        <p style="display: flex;align-items: center;justify-content: center;padding: 5px; padding: 0px 0px 6px 0;"
+                          [ngStyle]="{'color' : cardTextColor}"><img src="{{s3bucket}}assets/canvaimg/mapicon.png" alt=""
+                            style="width: 1.2rem; margin-right: 7px;"> {{address}}</p>
+                      </div>
+                    </div>
+                    <div class="row pt-2">
+                      <div class="col-6">
+                        <p style="display: flex;align-items: center;justify-content: start;padding: 0px 0px 0px 20px;"
+                          [ngStyle]="{'color' : cardTextColor}"><img src="{{s3bucket}}assets/canvaimg/emailicon.png" alt=""
+                            style="width: 1.2rem; margin-right: 7px;"> {{email}}</p>
+                      </div>
+                      <div class="col-6">
+                        <p style="display: flex;align-items: center;justify-content: end;text-align: end;padding: 0px 20px 0px 0px;"
+                          [ngStyle]="{'color' : cardTextColor}"><img src="{{s3bucket}}assets/canvaimg/callicon.png" alt=""
+                            style="width: 1.2rem; margin-right: 7px;"> {{contactNumber}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="frames2" style="position: absolute; bottom: 36px; 
+                    left: 36px; cursor: move; width: 53.35%;" cdkDragBoundary=".example-boundary" cdkDrag>
+                  <div style=" width: 100%; height: 5px; margin-bottom: 1%;"
+                    [ngStyle]="{'background-color' : cardBackground}"></div>
+                  <div style="color: black; padding: 5px 10px; border-radius: 0px 0px 10px 10px;"
+                    [ngStyle]="{'background-color' : cardBackground}">
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="number_email"
+                          style="display: flex; justify-content: space-between; align-items: center;">
+                          <p [ngStyle]="{'color' : cardTextColor}"> {{email}}</p>
+                          <p style="display: flex; align-items: center; padding-top: 7px;"
+                            [ngStyle]="{'color' : cardTextColor}">
+                            {{contactNumber}}</p>
+                        </div>
+                      </div>
+                      <div style="text-align: center;">
+                        <p [ngStyle]="{'color' : cardTextColor}">{{address}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="input-content">
+              <div class="mb-3">
+                <label class="form-label">Logo Upload</label>
+                <input type="file" class="form-control" (change)="handleFileInput($event)">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">address</label>
+                <input type="text" [(ngModel)]="address" name="address" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" [(ngModel)]="email" name="email" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Contact Number</label>
+                <input type="text" [(ngModel)]="contactNumber" name="contactNumber" class="form-control">
+              </div>
+            </div>
+            <div class="css-content">
+              <div class="mb-3 colorpiker">
+                <label style="width: 25%;" class="form-label">Background Color</label>
+                <input type="color" name="white" [(ngModel)]="cardBackground" value="#fff">
+              </div>
+              <div class="mb-3 colorpiker">
+                <label style="width: 25%;" class="form-label">Text Color</label>
+                <input type="color" name="white" [(ngModel)]="cardTextColor" value="#fff">
+              </div>
+              <div class="mb-3 colorpiker">
+                <label style="width: 25%;" class="form-label">Border Color</label>
+                <input type="color" name="white" [(ngModel)]="borderColor" value="#fff">
+              </div>
+              <div class="mb-3 colorpiker">
+                <label style="width: 25%;" class="form-label">Logo Height</label>
+                <div class="heightwidth">
+                  <input type="number" name="height" max="500" [(ngModel)]="height" class="form-control me-2">
+                  <input type="range" name="height" max="500" [(ngModel)]="height" class="">
+                </div>
+              </div>
+              <div class="mb-3 colorpiker">
+                <label style="width: 25%;" class="form-label">Logo Width</label>
+                <div>
+                  <div class="heightwidth">
+                    <input type="number" name="width" max="500" [(ngModel)]="width" class="form-control me-2">
+                    <input type="range" name="width" max="500" [(ngModel)]="width">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="frames">
+              <button type="button" (click)="frames($event)" name="f1" class="btn btn-primary">frames1</button>
+              <button type="button" (click)="frames($event)" name="f2" class="btn btn-primary">frames2</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="save(folder + '.jpg')" class="btn btn-primary">Download</button>
+      </div>
+    </div>
+  </div>
+</div>
