@@ -312,6 +312,26 @@ export class HomeComponent implements OnInit {
       folderName: "Dhanteras",
       date: "Nov 10, 2023"
     },
+    {
+      id: 46,
+      name: "Good Morning",
+      folderName: "GoodMorning",
+    },
+    {
+      id: 47,
+      name: "Good Night",
+      folderName: "GoodNight",
+    },
+    {
+      id: 48,
+      name: "Motivational Quotes",
+      folderName: "Motivational",
+    },
+    {
+      id: 49,
+      name: "We Are Hiring",
+      folderName: "WeAreHiring",
+    }
   ]
 
   menuData = [
@@ -368,6 +388,7 @@ export class HomeComponent implements OnInit {
 
   save(fileName: any) {
     let section: any = document.querySelector('#mainContainer');
+    debugger
     html2canvas(section).then((canvas: any) => {
       var link = document.createElement('a');
       link.href = canvas.toDataURL();
